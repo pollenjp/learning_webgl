@@ -1,20 +1,25 @@
 # WebGL - WebAR
-To save my code and article
 
 ```
-./
+/
 |
-|-- 01_basic_three_js
-|   |-- 
+|-- 01_basic_three_js/
+|   |-- README.md
+|   |-- code/
+|   |   |-- index.html
+|   |   |-- script.js
+|   |   |-- js/
+|   |   |   |-- three.js
+|   |   |   |-- three.min.js
 ```
 
 
 
-# シーンの作成
+## シーンの作成
 <a href="https://threejs.org/docs/#manual/introduction/Creating-a-scene">Creating a scene - three.js docs</a>
 
 
-# レンダラーの設置
+## レンダラーの設置
 HTMLファイルを読み込んだ時にブラウザ上で表示させるために、レンダラーを通してDOMを加えます。
 <a href="https://threejs.org/docs/#api/renderers/WebGLRenderer">WebGLRenderer - three.js docs</a>
 
@@ -34,7 +39,7 @@ widthとheightを決め、その値を引数として渡す。
 レンダリングは最後にします。
 
 
-# カメラを準備
+## カメラを準備
 
 ```js
 // カメラの準備
@@ -68,7 +73,7 @@ positionについてドキュメントを見ようと思ったときに<a href="
 ![20180104_search_js_sorce_code_for_qiita2.gif](https://qiita-image-store.s3.amazonaws.com/0/195174/5f1e68fe-440e-163b-39dd-f354894dfbaa.gif)
 
 
-# 光源の準備
+## 光源の準備
 光源を配置することで光の当り具合などを調整できます。
 ```js
 // 光源の追加
@@ -83,7 +88,7 @@ scene.add(directionalLight);
 - AmbientLight: 自然な光（光の乱反射を表現）
 
 
-# 物体の準備
+## 物体の準備
 ```js
 // 物体の準備
 var geometry = new THREE.CubeGeometry(30, 30, 30);
@@ -93,12 +98,69 @@ scene.add( mesh );
 ```
 
 
-# レンダリング
+## レンダリング
 最後にレンダラーを使ってレンダリングを行う。
 
 
-# 実行結果
+## 実行結果
 
+
+## すべてのコード
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>01 Basic Three.js</title>
+</head>
+<body>
+    <script src="js/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+```js
+// シーンの作成
+var scene = new THREE.Scene();
+
+
+// サイズの決定
+var width   = 600;
+var height  = 400;
+
+// レンダラーの設置
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(width, height);
+document.body.appendChild(renderer.domElement);
+
+
+// カメラの準備
+var vfov     = 60;              /* vertical field of view */
+var aspect  = width / height;   // aspect ratio
+var near    = 0.1;              /* near plane */
+var far     = 1000;             /* far plane */
+// カメラ作成
+var camera = new THREE.PerspectiveCamera(vfov, aspect, near, far);
+camera.position.set(0, 0, 50);  /* カメラの位置を指定 */
+
+
+// 光源の追加
+var directionalLight = new THREE.DirectionalLight(0xffffff);
+directionalLight.position.set(0, 1, 1);
+scene.add(directionalLight);
+
+
+// 物体の追加
+var geometry = new THREE.CubeGeometry(30, 30, 30);
+var material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
+var mesh = new THREE.Mesh(geometry, material);
+scene.add( mesh );
+
+
+// レンダリング
+renderer.render(scene, camera)
+```
 
 # 参考
 - <a href="https://html5experts.jp/yomotsu/5225/">初心者でも絶対わかる、WebGLプログラミング＜three.js最初の一歩＞ | HTML5Experts.jp</a>

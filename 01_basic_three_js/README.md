@@ -64,6 +64,7 @@ camera.position.z = 50
 
 __カメラインスタンスのpositionプロパティについて：__
 positionについてドキュメントを見ようと思ったときに<a href="https://threejs.org/docs/#api/cameras/PerspectiveCamera">PerspectiveCameraの公式ドキュメント</a>に載っていなかったのでどこに書かれているのかなと思ったのですが、ソースコードを見るとcallで呼び出していました（下の動画参照）。
+
 ![20180104_search_js_sorce_code_for_qiita2.gif](https://qiita-image-store.s3.amazonaws.com/0/195174/5f1e68fe-440e-163b-39dd-f354894dfbaa.gif)
 
 
@@ -102,4 +103,4 @@ scene.add( mesh );
 # 参考
 - <a href="https://html5experts.jp/yomotsu/5225/">初心者でも絶対わかる、WebGLプログラミング＜three.js最初の一歩＞ | HTML5Experts.jp</a>
 - <a href="https://github.com/mrdoob/three.js/wiki/Getting-Started">Getting Started · mrdoob/three.js Wiki</a>
-- <a href=""></a>
+- <a href="https://liginc.co.jp/315939">three.jsの基本をおさらいしてみよう！〜基礎の基礎編〜 | 株式会社LIG</a>

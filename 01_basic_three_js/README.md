@@ -4,13 +4,13 @@
 /
 |
 |-- 01_basic_three_js/
-|   |-- README.md
-|   |-- code/
-|   |   |-- index.html
-|   |   |-- script.js
-|   |   |-- js/
-|   |   |   |-- three.js
-|   |   |   |-- three.min.js
+    |-- README.md
+    |-- code/
+        |-- index.html
+        |-- script.js
+        |-- js/
+            |-- three.js
+            |-- three.min.js
 ```
 
 
@@ -20,10 +20,10 @@
 
 
 ## レンダラーの設置
-HTMLファイルを読み込んだ時にブラウザ上で表示させるために、レンダラーを通してDOMを加えます。
+HTMLファイルを読み込んだ時にブラウザ上で表示させるために、レンダラーを通してDOMを加えます。<br>
 <a href="https://threejs.org/docs/#api/renderers/WebGLRenderer">WebGLRenderer - three.js docs</a>
 
-```js
+```js:script.js
 // サイズの決定
 var width   = 600;
 var height  = 400;
@@ -41,7 +41,7 @@ widthとheightを決め、その値を引数として渡す。
 
 ## カメラを準備
 
-```js
+```js:script.js
 // カメラの準備
 var vfov     = 60;              /* vertical field of view */
 var aspect  = width / height;   // aspect ratio
@@ -61,7 +61,7 @@ camera.position.set(0, 0, 50);  /* カメラの位置を指定 */
 
 次に3D空間内におけるカメラの設置位置をpositionというプロパティーに指定しています。
 positionはx,y,zの値を指定可能であり、それぞれの値を直接書き換えることもできます。（以下のコード参照）
-```js
+```js:script.js
 camera.position.x = 0
 camera.position.y = 0
 camera.position.z = 50
@@ -75,7 +75,7 @@ positionについてドキュメントを見ようと思ったときに<a href="
 
 ## 光源の準備
 光源を配置することで光の当り具合などを調整できます。
-```js
+```js:script.js
 // 光源の追加
 var directionalLight = new THREE.DirectionalLight(0xffffff);
 directionalLight.position.set(0, 1, 1);
@@ -89,7 +89,7 @@ scene.add(directionalLight);
 
 
 ## 物体の準備
-```js
+```js:script.js
 // 物体の準備
 var geometry = new THREE.CubeGeometry(30, 30, 30);
 var material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
@@ -106,7 +106,7 @@ scene.add( mesh );
 
 
 ## すべてのコード
-```html
+```html:index.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,7 +120,7 @@ scene.add( mesh );
 </html>
 ```
 
-```js
+```js:script.js
 // シーンの作成
 var scene = new THREE.Scene();
 

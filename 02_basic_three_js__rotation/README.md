@@ -4,20 +4,20 @@
 ```
 /
 |
-|-- 01_basic_three_js/
-|   |-- README.md
-|   |-- code/
-|   |   |-- 
-|
 |-- 02_basic_three_js/
-|   |-- README.md           <--
-|   |-- code/
-|   |   |-- 
+    |-- README.md           <--
+    |-- code/
+        |-- index.html
+        |-- script.js
+        |-- js/
+            |-- three.js
+            |-- three.min.js
 ```
 
 # 回転モーションを加える
-レンダリングの部分のコードを以下のように変更
-```
+レンダリングの部分のコードを以下のように変更<br>
+
+```js:script.js
 function animate(){
     requestAnimationFrame( animate );   // (1)
 
@@ -30,8 +30,8 @@ function animate(){
 
 animate();
 ```
-<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame">requestAnimationFrame</a>は簡単に言えば、ブラウザ上で再描画される前に引数として渡された関数を実行することを要求する関数です。
-つまり、再開がされる処理が行われる度にその直前で、(1)-(4)の処理が行われることになります。
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame">requestAnimationFrame</a>は簡単に言えば、ブラウザ上で再描画される前に引数として渡された関数を実行することを要求する関数です。<br>
+つまり、再開がされる処理が行われる度にその直前で、(1)-(4)の処理が行われることになります。<br>
 
 
 # 実行結果

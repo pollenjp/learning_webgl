@@ -71,15 +71,10 @@ loader.load(
 );
 
 
-// OrbitControls
-controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
 // レンダリング
 function render() {
     requestAnimationFrame( render );
     renderer.render( scene, camera );   /* rendering */
-    controls.update();                  /* update */
 }
 
 render();

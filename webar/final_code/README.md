@@ -28,7 +28,7 @@ I created WebAR application.
 
 ## ArToolKitContext  -- camera parameter / marker detection
 
-```js
+```js:script.js
 /******************************************************************
   ****  ArToolKitContext  -- camera parameter / marker detection **
   *****************************************************************/
